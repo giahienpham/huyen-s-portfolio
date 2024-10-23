@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import logo from "../assets/logo1.png";
 import { LINKS } from "../constants";
-import { FaTimes } from "react-icons/fa";
-import { FaBars } from "react-icons/fa6";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -51,7 +50,7 @@ const Navbar = () => {
           {LINKS.map((link, index) => (
             <a
               key={index}
-              href={`${link.targetId}`}
+              href={`#${link.targetId}`}
               className="block p-4 uppercase tracking-tighter"
               onClick={(e) => handleScroll(e, link.targetId)}
             >
