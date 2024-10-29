@@ -13,14 +13,14 @@ const Mission = () => {
     },
     {
       id: 2,
-      image: missionImg,
+      image: mission4,
       title: "Creative Work",
       description:
         "Another description for the second slide. Add as many slides as you like.",
     },
     {
       id: 3,
-      image: missionImg,
+      image: mission4,
       title: "Innovative Ideas",
       description:
         "Description for the third slide. You can customize the content.",
@@ -92,65 +92,63 @@ const Mission = () => {
       </div>
 
       {/* Slider Container */}
-      <div className="flex-1 relative" ref={sliderRef}>
+      <div className="flex-1 flex relative overflow-hidden" ref={sliderRef}>
+        {/* Left Arrow */}
+        <button
+          onClick={prevSlide}
+          className="text-white p-2 rounded-full z-20 self-center"
+        >
+          <span className="w-12 h-12 flex items-center justify-center rounded-full border-2 border-black text-black">
+            &#10094;
+          </span>
+        </button>
+
         {/* Slides */}
-        <div className="relative w-full h-full">
-          {slides.map((slide, index) => (
-            <div
-              key={slide.id}
-              className={`absolute inset-0 transition-transform duration-1000 ease-in-out ${
-                index === currentSlide
-                  ? "translate-x-0 opacity-100 z-10"
-                  : index < currentSlide
-                  ? "-translate-x-full opacity-0 z-0"
-                  : "translate-x-full opacity-0 z-0"
-              }`}
-            >
-              <img
-                src={slide.image}
-                alt={slide.title}
-                className="w-full h-full object-cover"
-              />
-              {/* Slide Content */}
-              <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-start px-8 md:px-20 text-white">
-                <h3 className="text-2xl md:text-5xl font-extrabold">
-                  {slide.title}
-                </h3>
-                <p className="mt-4 max-w-lg text-sm md:text-base ">
-                  {slide.description}
-                </p>
-                <div className="mt-4 flex space-x-4">
-                  <button className="px-4 md:px-6 py-2 bg-white text-black">
-                    See More
-                  </button>
-                  <button className="px-4 md:px-6 py-2 border border-white text-white">
-                    Subscribe
-                  </button>
+        <div className="relative w-full h-full flex-grow">
+          {/* Slides */}
+          <div className="relative w-full h-full">
+            {slides.map((slide, index) => (
+              <div
+                key={slide.id}
+                className={`absolute inset-0 flex transition-transform duration-1000 ease-in-out ${
+                  index === currentSlide
+                    ? "translate-x-0 opacity-100 z-10"
+                    : index < currentSlide
+                    ? "-translate-x-full opacity-0 z-0"
+                    : "translate-x-full opacity-0 z-0"
+                }`}
+              >
+                {/* Content (1/3 width) */}
+                <div className="w-1/3 h-full flex flex-col justify-start items-start px-8 md:px-20 py-4">
+                  <h3 className="text-2xl md:text-5xl font-extrabold">
+                    {slide.title}
+                  </h3>
+                  <p className="mt-4 max-w-lg text-sm md:text-base">
+                    {slide.description}
+                  </p>
+                </div>
+                {/* Image (2/3 width) */}
+                <div className="w-2/3 h-full">
+                  <img
+                    src={slide.image}
+                    alt={slide.title}
+                    className="w-full h-full object-cover pr-18"
+                  />
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
-        {/* Navigation Arrows */}
-        <div className="absolute inset-0 flex justify-between items-center px-4">
-          <button
-            onClick={prevSlide}
-            className="text-white p-2 rounded-full z-20"
-          >
-            <span className="w-12 h-12 flex items-center justify-center rounded-full border-2 border-white">
-              &#10094;
-            </span>
-          </button>
-          <button
-            onClick={nextSlide}
-            className="text-white p-2 rounded-full z-20"
-          >
-            <span className="w-12 h-12 flex items-center justify-center rounded-full border-2 border-white">
-              &#10095;
-            </span>
-          </button>
-        </div>
+        {/* Right Arrow */}
+        <button
+          onClick={nextSlide}
+          className="text-white p-2 rounded-full z-20 self-center"
+        >
+          <span className="w-12 h-12 flex items-center justify-center rounded-full border-2 border-black text-black">
+            &#10095;
+          </span>
+        </button>
 
         {/* Thumbnails */}
         <div className="absolute bottom-6 right-10 flex space-x-6 z-20">
