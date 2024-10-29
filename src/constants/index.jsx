@@ -1,13 +1,11 @@
-import dish1 from "../assets/dish1.jpeg";
-import dish2 from "../assets/dish2.jpeg";
-import dish3 from "../assets/dish3.jpeg";
-import dish4 from "../assets/dish4.jpeg";
-import dish5 from "../assets/dish5.jpeg";
-import dish6 from "../assets/dish6.jpeg";
-import dish7 from "../assets/dish7.jpeg";
-import dish8 from "../assets/dish8.jpeg";
-import dish9 from "../assets/dish9.jpeg";
-import dish10 from "../assets/dish10.jpeg";
+import dish1 from "../assets/dish1.jpg";
+import dish2 from "../assets/dish2.jpg";
+import dish3 from "../assets/dish3.jpg";
+import dish4 from "../assets/dish4.jpg";
+import dish5 from "../assets/dish5.jpg";
+import dish6 from "../assets/dish6.jpg";
+import dish7 from "../assets/dish7.jpg";
+import dish8 from "../assets/dish8.jpg";
 
 import italian from "../assets/italian.jpeg";
 import japanese from "../assets/japanese.jpeg";
@@ -65,17 +63,6 @@ export const DISHES = [
     title: "Peking Duck",
     description: "Crispy duck with pancakes, cucumber, and hoisin sauce",
   },
-  {
-    image: dish9,
-    title: "Beef Wellington",
-    description: "Tender beef filet wrapped in pastry with mushrooms and herbs",
-  },
-  {
-    image: dish10,
-    title: "Tiramisu",
-    description:
-      "Italian dessert with layers of coffee-soaked biscuits and mascarpone",
-  },
 ];
 
 export const ABOUT = {
@@ -120,8 +107,8 @@ export const REVIEW = {
 
 export const CONTACT = [
   { key: "address", value: "Address: 123 Main Street, Paris, France, 345678" },
-  { key: "phone", value: "Phone: 123-456-7890" },
-  { key: "email", value: "Email: contact@restaurant.com" },
+  { key: "phone", value: "Phone: (+84) 88 891 3900" },
+  { key: "email", value: "Email: huyenpk090307@gmail.com" },
 ];
 
 export const SOCIAL_MEDIA_LINKS = [

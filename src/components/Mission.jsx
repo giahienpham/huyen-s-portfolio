@@ -1,43 +1,185 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import missionImg from "../assets/mission.jpeg";
-import mission from "../assets/mission.mp4";
-import { MISSION } from "../constants";
-import { motion } from "framer-motion";
+import mission4 from "../assets/mission4.jpg";
 
 const Mission = () => {
+  const slides = [
+    {
+      id: 1,
+      image: missionImg,
+      title: "Where it all began",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic voluptatem perspiciatis dicta possimus voluptates exercitationem esse quo dolorem, itaque, pariatur ducimus omnis facere reprehenderit ex distinctio reiciendis? Inventore, distinctio eius!",
+    },
+    {
+      id: 2,
+      image: missionImg,
+      title: "Creative Work",
+      description:
+        "Another description for the second slide. Add as many slides as you like.",
+    },
+    {
+      id: 3,
+      image: missionImg,
+      title: "Innovative Ideas",
+      description:
+        "Description for the third slide. You can customize the content.",
+    },
+    {
+      id: 4,
+      image: mission4,
+      title: "Future Vision",
+      description: "Exploring the vastness of space and our place within it.",
+    },
+    {
+      id: 5,
+      image: missionImg,
+      title: "Sustainable Growth",
+      description:
+        "Strategies for sustainable growth and environmental preservation.",
+    },
+    {
+      id: 6,
+      image: missionImg,
+      title: "Global Impact",
+      description: "Making a positive impact on communities worldwide.",
+    },
+  ];
+
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const sliderRef = useRef(null);
+
+  // Determine the total number of slides
+  const totalSlides = slides.length;
+
+  // Function to get the next slide index
+  const nextSlide = () => {
+    setCurrentSlide((prevIndex) =>
+      prevIndex === totalSlides - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  // Function to get the previous slide index
+  const prevSlide = () => {
+    setCurrentSlide((prevIndex) =>
+      prevIndex === 0 ? totalSlides - 1 : prevIndex - 1
+    );
+  };
+
+  const getVisibleThumbnails = () => {
+    const visibleCount = 3;
+    let start = currentSlide - 1;
+
+    // Adjust start index to ensure it stays within bounds
+    if (start < 0) {
+      start = 0;
+    } else if (start + visibleCount > totalSlides) {
+      start = totalSlides - visibleCount;
+    }
+
+    return slides.slice(start, start + visibleCount);
+  };
+
+  const visibleThumbnails = getVisibleThumbnails();
+
   return (
-    <section id="mission">
-      <div className="container mx-auto text-center">
-        <h2 className="mb-8 text-3xl lg:text-4xl">My mission</h2>
-        <div className="relative flex items-center justify-center">
-          <motion.video
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 1 }}
-            className="w-full rounded-3xl"
-            autoPlay
-            muted
-            loop
-            playsInline
-            poster={missionImg}
+    <section className="w-full h-screen flex flex-col" id="Mission">
+      {/* Title */}
+      <div className="flex-none py-8">
+        <h2 className="text-center text-3xl lg:text-4xl">
+          My Mission in Education
+        </h2>
+      </div>
+
+      {/* Slider Container */}
+      <div className="flex-1 relative" ref={sliderRef}>
+        {/* Slides */}
+        <div className="relative w-full h-full">
+          {slides.map((slide, index) => (
+            <div
+              key={slide.id}
+              className={`absolute inset-0 transition-transform duration-1000 ease-in-out ${
+                index === currentSlide
+                  ? "translate-x-0 opacity-100 z-10"
+                  : index < currentSlide
+                  ? "-translate-x-full opacity-0 z-0"
+                  : "translate-x-full opacity-0 z-0"
+              }`}
+            >
+              <img
+                src={slide.image}
+                alt={slide.title}
+                className="w-full h-full object-cover"
+              />
+              {/* Slide Content */}
+              <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-start px-8 md:px-20 text-white">
+                <h3 className="text-2xl md:text-5xl font-extrabold">
+                  {slide.title}
+                </h3>
+                <p className="mt-4 max-w-lg text-sm md:text-base ">
+                  {slide.description}
+                </p>
+                <div className="mt-4 flex space-x-4">
+                  <button className="px-4 md:px-6 py-2 bg-white text-black">
+                    See More
+                  </button>
+                  <button className="px-4 md:px-6 py-2 border border-white text-white">
+                    Subscribe
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Navigation Arrows */}
+        <div className="absolute inset-0 flex justify-between items-center px-4">
+          <button
+            onClick={prevSlide}
+            className="text-white p-2 rounded-full z-20"
           >
-            <source src={mission} type="video/mp4"></source>
-          </motion.video>
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-            className="absolute h-full w-full rounded-3xl bg-black/40"
-          ></motion.div>
-          <motion.p
-            initial={{ opacity: 0, y:20 }}
-            whileInView={{ opacity: 1, y:0 }}
-            viewport={{once: true}}
-            transition={{ duration: 1, delay: 0.5 }}
-            className="absolute max-w-lg tracking-tighter lg:text-3xl"
+            <span className="w-12 h-12 flex items-center justify-center rounded-full border-2 border-white">
+              &#10094;
+            </span>
+          </button>
+          <button
+            onClick={nextSlide}
+            className="text-white p-2 rounded-full z-20"
           >
-            {MISSION}
-          </motion.p>
+            <span className="w-12 h-12 flex items-center justify-center rounded-full border-2 border-white">
+              &#10095;
+            </span>
+          </button>
+        </div>
+
+        {/* Thumbnails */}
+        <div className="absolute bottom-6 right-10 flex space-x-6 z-20">
+          {visibleThumbnails.map((slide) => {
+            // Calculate the actual index in the slides array
+            const actualIndex = slides.findIndex((s) => s.id === slide.id);
+            return (
+              <div
+                key={slide.id}
+                className={`w-40 h-60 relative cursor-pointer rounded-2xl overflow-hidden ${
+                  actualIndex === currentSlide
+                    ? "border-4 border-orange-500"
+                    : "border-2 border-transparent"
+                }`}
+                onClick={() => setCurrentSlide(actualIndex)}
+              >
+                <img
+                  src={slide.image}
+                  alt={slide.title}
+                  className="w-full h-full object-cover rounded-2xl transform hover:scale-105 transition-transform duration-300"
+                />
+                {/* Overlay and Text */}
+                <div className="absolute inset-0 bg-black bg-opacity-30 rounded-2xl"></div>
+                <div className="absolute bottom-1 left-2 text-white">
+                  <div className="text-sm font-bold">{slide.title}</div>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

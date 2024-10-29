@@ -8,19 +8,23 @@ import Expertise from "./components/Expertise";
 import Recommendations from "./components/Recommendations";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import Honors from "./components/Honors";
+import Debate from "./components/Debate";
 
 const App = () => {
   return (
-    <main className="overflow-y-hidden text-neutral-200 antialiased">
+    <main className="overflow-y-hidden antialiased">
       <HeroSection />
       <Navbar />
-      <Arts/>
-      <About/>
-      <Mission/>
-      <Expertise/>
-      <Recommendations/>
-      <Contact/>
-      <Footer/>
+      <About />
+      <Honors />
+      <Mission />
+      <Arts />
+      <Debate />
+      <Expertise />
+      <Recommendations />
+      <Contact />
+      <Footer />
     </main>
   );
 };
