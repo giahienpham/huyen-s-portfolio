@@ -17,7 +17,6 @@ import "swiper/css/navigation";
 import honors1 from "../assets/honors1.jpg";
 import honors2 from "../assets/honors2.jpg";
 import honors3 from "../assets/honors3.jpg";
-import internship from "../assets/internship.jpg";
 import dish2 from "../assets/dish2.jpeg";
 import dish3 from "../assets/dish3.jpeg";
 import dish5 from "../assets/dish5.jpeg";
@@ -53,7 +52,7 @@ const Honors = () => {
     },
     {
       id: 4,
-      image: internship,
+      image: dish3,
       title: "Internship",
       description: "IOT-PI & Data Science Internship",
     },
