@@ -20,7 +20,6 @@ import honors3 from "../assets/honors3.jpg";
 import internship from "../assets/internship.jpg";
 import dish2 from "../assets/dish2.jpeg";
 import dish3 from "../assets/dish3.jpeg";
-import dish4 from "../assets/dish4.jpeg";
 import dish5 from "../assets/dish5.jpeg";
 import dish6 from "../assets/dish6.jpeg";
 import dish7 from "../assets/dish7.jpeg";
