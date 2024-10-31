@@ -56,7 +56,6 @@ const Honors = () => {
       image: internship,
       title: "Internship",
       description: "IOT-PI & Data Science Internship",
-      images: [internship],
     },
     {
       id: 5,
