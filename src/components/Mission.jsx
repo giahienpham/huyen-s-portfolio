@@ -1,19 +1,23 @@
 import React, { useState, useEffect, useRef } from "react";
 import missionImg from "../assets/mission.jpeg";
 import mission4 from "../assets/mission4.jpg";
+import TA from "../assets/TA.jpg";
+import incre1 from "../assets/incre1.jpg";
+import incre2 from "../assets/incre2.jpg";
+import buom from "../assets/buom.jpg";
 
 const Mission = () => {
   const slides = [
     {
       id: 1,
-      image: missionImg,
+      image: incre1,
       title: "Where it all began",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic voluptatem perspiciatis dicta possimus voluptates exercitationem esse quo dolorem, itaque, pariatur ducimus omnis facere reprehenderit ex distinctio reiciendis? Inventore, distinctio eius!",
     },
     {
       id: 2,
-      image: mission4,
+      image: TA,
       title: "Creative Work",
       description:
         "Another description for the second slide. Add as many slides as you like.",
@@ -27,13 +31,14 @@ const Mission = () => {
     },
     {
       id: 4,
-      image: mission4,
+      image: incre2,
       title: "Future Vision",
       description: "Exploring the vastness of space and our place within it.",
+      images: [incre2],
     },
     {
       id: 5,
-      image: missionImg,
+      image: buom,
       title: "Sustainable Growth",
       description:
         "Strategies for sustainable growth and environmental preservation.",

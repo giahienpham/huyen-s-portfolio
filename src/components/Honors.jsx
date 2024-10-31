@@ -17,6 +17,7 @@ import "swiper/css/navigation";
 import honors1 from "../assets/honors1.jpg";
 import honors2 from "../assets/honors2.jpg";
 import honors3 from "../assets/honors3.jpg";
+import internship from "../assets/internship.jpg";
 import dish2 from "../assets/dish2.jpeg";
 import dish3 from "../assets/dish3.jpeg";
 import dish4 from "../assets/dish4.jpeg";
@@ -24,64 +25,56 @@ import dish5 from "../assets/dish5.jpeg";
 import dish6 from "../assets/dish6.jpeg";
 import dish7 from "../assets/dish7.jpeg";
 
+import cert1 from "../assets/cert1.jpg";
+import cert2 from "../assets/cert2.jpg";
+import cert3 from "../assets/cert3.jpg";
+import cert4 from "../assets/cert4.jpg";
+
 const Honors = () => {
   const slides = [
     {
       id: 1,
       image: honors1,
-      title: "Honors Topic 1",
-      description: "An insightful discussion on Topic 1.",
-      price: "$20",
-      rating: 4.5,
+      title: "Teaching Assistant",
+      description: "Hanoi Debate Summer Camp 2024",
       images: [honors1, honors2, honors3],
     },
     {
       id: 2,
       image: dish2,
-      title: "Honors Topic 2",
-      description: "Engaging honors on Topic 2.",
-      price: "$15",
-      rating: 4.2,
+      title: "Researcher",
+      description: "Multilingual support system for elderly people",
     },
     {
       id: 3,
       image: dish3,
-      title: "Honors Topic 3",
-      description: "Thought-provoking honors on Topic 3.",
-      price: "$10",
-      rating: 4.8,
+      title: "Researcher",
+      description: "The danger of stroke: Unstroken",
     },
     {
       id: 4,
-      image: dish4,
-      title: "Honors Topic 4",
-      description: "Dynamic discussion on Topic 4.",
-      price: "$18",
-      rating: 4.6,
+      image: internship,
+      title: "Internship",
+      description: "IOT-PI & Data Science Internship",
+      images: [internship],
     },
     {
       id: 5,
       image: dish5,
-      title: "Honors Topic 5",
-      description: "In-depth analysis on Topic 5.",
-      price: "$12",
-      rating: 4.3,
+      title: "National Finalist",
+      description: "ASEAN Data Science Explorers",
     },
     {
       id: 6,
       image: dish6,
-      title: "Honors Topic 6",
-      description: "Comprehensive honors on Topic 6.",
-      price: "$22",
-      rating: 4.7,
+      title: "Champion",
+      description: "U-talk English Speaking Contest",
     },
     {
       id: 7,
       image: dish7,
-      title: "Honors Topic 7",
-      description: "Extensive discussion on Topic 7.",
-      price: "$16",
-      rating: 4.4,
+      title: "Scholarship Winner",
+      description: "AFS Intercultural Programs (France)",
     },
   ];
 
@@ -97,7 +90,7 @@ const Honors = () => {
     <section id="honors" className="py-16 bg-[#FFFFF0] relative">
       <div className="container mx-auto px-4 text-center">
         <h2 className="my-16 text-3xl lg:text-4xl text-black">
-          Honors & Achievements
+          Honors & Experience
         </h2>
         <div className="relative">
           {/* Swiper Container */}
@@ -111,11 +104,7 @@ const Honors = () => {
             centeredSlides={true}
             loop={true}
             slidesPerView={3}
-            spaceBetween={0} // Removed space between slides
-            loopedSlides={slides.length}
-            loopAdditionalSlides={3}
-            watchSlidesProgress={true}
-            watchSlidesVisibility={true}
+            spaceBetween={0}
             onSwiper={(swiper) => {
               swiperRef.current = swiper;
             }}
@@ -129,7 +118,7 @@ const Honors = () => {
             pagination={{
               clickable: true,
               renderBullet: (index, className) => {
-                return `<span class="${className} bg-black w-3 h-3 rounded-full mx-1"></span>`; // Changed bullet color for visibility
+                return `<span class="${className} bg-black w-3 h-3 rounded-full mx-1"></span>`;
               },
             }}
             navigation={{
@@ -141,8 +130,6 @@ const Honors = () => {
               disableOnInteraction: false,
             }}
             modules={[EffectCoverflow, Pagination, Navigation, Autoplay]}
-            observer={true}
-            observeParents={true}
             className="honors-slider pb-16"
           >
             {slides.map((slide, index) => (
@@ -150,14 +137,20 @@ const Honors = () => {
                 key={slide.id}
                 className="flex justify-center"
                 onClick={() => {
-                  // Check if the clicked slide is the active slide
-                  if (swiperRef.current.realIndex === index) {
+                  const clickedIndex = parseInt(
+                    swiperRef.current.clickedSlide.getAttribute(
+                      "data-swiper-slide-index"
+                    )
+                  );
+                  const realIndex = swiperRef.current.realIndex;
+
+                  if (realIndex === clickedIndex) {
                     // Open the details modal
                     setSelectedSlide(slide);
-                    setSelectedSlideIndex(index);
+                    setSelectedSlideIndex(clickedIndex);
                   } else {
                     // Move to the clicked slide
-                    swiperRef.current.slideToLoop(index);
+                    swiperRef.current.slideToLoop(clickedIndex);
                   }
                 }}
               >
@@ -173,7 +166,7 @@ const Honors = () => {
                       <h2 className="text-white text-xl font-semibold">
                         {slide.title}
                       </h2>
-                      <p className="text-white text-sm mt-4">
+                      <p className="text-white text-base mt-2">
                         {slide.description}
                       </p>
                     </div>
@@ -195,7 +188,7 @@ const Honors = () => {
         )}
       </div>
 
-      {/* Navigation Buttons (Positioned Outside of Swiper Container) */}
+      {/* Navigation Buttons */}
       <div className="absolute top-1/2 left-4 z-10 transform -translate-y-1/2">
         <button
           ref={prevRef}
@@ -250,11 +243,11 @@ const EnlargedSlide = ({
   return (
     <div
       className="fixed inset-0 bg-transparent z-50 flex items-center justify-center backdrop-blur-sm"
-      onClick={onClose} // Allows clicking outside to close
+      onClick={onClose}
     >
       <div
         className="relative flex w-full h-full"
-        onClick={(e) => e.stopPropagation()} // Prevents closing when clicking inside
+        onClick={(e) => e.stopPropagation()}
       >
         {/* Left Arrow */}
         <button
@@ -271,9 +264,9 @@ const EnlargedSlide = ({
           }`}
         >
           {slide.id === 1 ? (
-            // For the first slide, display honors1 on top and honors2 & honors3 below
+            // For the first slide, display multiple images
             <div className="flex flex-col h-full">
-              {/* Top Image (honors1) */}
+              {/* Top Image */}
               <div className="h-1/2">
                 <img
                   src={slide.images[0]}
@@ -283,7 +276,7 @@ const EnlargedSlide = ({
                   } rounded-3xl`}
                 />
               </div>
-              {/* Bottom Images (honors2 and honors3) */}
+              {/* Bottom Images */}
               <div className="flex h-1/2">
                 {slide.images.slice(1).map((imgSrc, idx) => (
                   <div key={idx} className="w-1/2 overflow-hidden rounded-3xl">
@@ -323,7 +316,6 @@ const EnlargedSlide = ({
           <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-purple-400 via-pink-500 to-purple-500 bg-clip-text text-transparent">
             {slide.title}
           </h2>
-
           <p className="text-white text-lg">{slide.description}</p>
         </div>
         {/* Right Arrow */}

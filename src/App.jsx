@@ -3,13 +3,13 @@ import HeroSection from "./components/HeroSection";
 import Navbar from "./components/Navbar";
 import Arts from "./components/Arts";
 import About from "./components/About";
-import Mission from "./components/Mission";
-import Expertise from "./components/Expertise";
+import Debate from "./components/Debate";
+import Leadership from "./components/Leadership";
 import Recommendations from "./components/Recommendations";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Honors from "./components/Honors";
-import Debate from "./components/Debate";
+import Mission from "./components/Mission";
 
 const App = () => {
   return (
@@ -19,9 +19,9 @@ const App = () => {
       <About />
       <Honors />
       <Mission />
-      <Arts />
       <Debate />
-      <Expertise />
+      <Leadership />
+      <Arts />
       <Recommendations />
       <Contact />
       <Footer />
