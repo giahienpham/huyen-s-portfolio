@@ -84,32 +84,41 @@ export const MISSION =
 
 export const CUSINES = [
   {
-    number: "01.",
     image: italian,
-    title: "My Journey",
+    title: "Professional Advisor - CSP Debate Society",
     description:
       "Experience the flavors of Italy with our exquisite Italian cuisine, featuring traditional recipes and contemporary dishes.",
   },
   {
-    number: "02.",
     image: japanese,
-    title: "My Achievements",
+    title: "President - The Incredibles Project",
     description:
       "Delight in the art of Japanese culinary excellence, offering a fusion of classic and modern flavors.",
   },
   {
-    number: "03.",
     image: indian,
-    title: "Nurturing Future Debaters",
+    title: "Vice President - The Renouveau Project",
     description:
       "Indulge in the rich and diverse tastes of India, with a menu that celebrates the country's culinary heritage.",
   },
   {
-    number: "04.",
     image: indian,
     title: "My Website for Debate",
-    description:
-      "I created a website my own to share my knowledge and thoughts about debate. Check out it here!",
+    description: (
+      <>
+        I created a website on my own to share my knowledge and thoughts about
+        debate. Check out it here:{" "}
+        <a
+          href="http://14.225.204.21:8090"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-500 underline hover:text-blue-700"
+        >
+          SkyDebate.com
+        </a>
+        .
+      </>
+    ),
   },
 ];
 

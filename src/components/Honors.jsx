@@ -29,6 +29,7 @@ import cert1 from "../assets/cert1.jpg";
 import cert2 from "../assets/cert2.jpg";
 import cert3 from "../assets/cert3.jpg";
 import cert4 from "../assets/cert4.jpg";
+import utalk from "../assets/utalk.jpg";
 
 const Honors = () => {
   const slides = [
@@ -66,7 +67,7 @@ const Honors = () => {
     },
     {
       id: 6,
-      image: dish6,
+      image: utalk,
       title: "Champion",
       description: "U-talk English Speaking Contest",
     },

@@ -5,6 +5,7 @@ import TA from "../assets/TA.jpg";
 import incre1 from "../assets/incre1.jpg";
 import incre2 from "../assets/incre2.jpg";
 import buom from "../assets/buom.jpg";
+import plant1 from "../assets/plant1.jpg";
 
 const Mission = () => {
   const slides = [
@@ -45,7 +46,7 @@ const Mission = () => {
     },
     {
       id: 6,
-      image: missionImg,
+      image: plant1,
       title: "Global Impact",
       description: "Making a positive impact on communities worldwide.",
     },
@@ -110,7 +111,7 @@ const Mission = () => {
 
         {/* Slides */}
         <div className="relative w-full h-full flex-grow">
-          {/* Slides */}
+          {/* Slides Wrapper */}
           <div className="relative w-full h-full">
             {slides.map((slide, index) => (
               <div
@@ -154,31 +155,33 @@ const Mission = () => {
             &#10095;
           </span>
         </button>
+      </div>
 
-        {/* Thumbnails */}
-        <div className="absolute bottom-6 right-10 flex space-x-6 z-20">
+      {/* Thumbnails Container */}
+      <div className="flex-none py-4">
+        <div className="flex justify-center space-x-4">
           {visibleThumbnails.map((slide) => {
             // Calculate the actual index in the slides array
             const actualIndex = slides.findIndex((s) => s.id === slide.id);
             return (
               <div
                 key={slide.id}
-                className={`w-40 h-60 relative cursor-pointer rounded-2xl overflow-hidden ${
+                className={`w-24 h-24 relative cursor-pointer rounded-md overflow-hidden ${
                   actualIndex === currentSlide
                     ? "border-4 border-orange-500"
                     : "border-2 border-transparent"
-                }`}
+                } shadow-md hover:shadow-lg transition-shadow duration-300`}
                 onClick={() => setCurrentSlide(actualIndex)}
               >
                 <img
                   src={slide.image}
                   alt={slide.title}
-                  className="w-full h-full object-cover rounded-2xl transform hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-cover rounded-md transform hover:scale-105 transition-transform duration-300"
                 />
                 {/* Overlay and Text */}
-                <div className="absolute inset-0 bg-black bg-opacity-30 rounded-2xl"></div>
-                <div className="absolute bottom-1 left-2 text-white">
-                  <div className="text-sm font-bold">{slide.title}</div>
+                <div className="absolute inset-0 bg-black bg-opacity-20 rounded-md"></div>
+                <div className="absolute bottom-2 left-2 text-white">
+                  <div className="text-sm font-semibold">{slide.title}</div>
                 </div>
               </div>
             );
