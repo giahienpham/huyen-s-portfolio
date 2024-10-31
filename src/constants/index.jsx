@@ -97,6 +97,12 @@ export const CUSINES = [
   },
   {
     image: indian,
+    title: "Founder & President - Cup of happy tea",
+    description:
+      "Indulge in the rich and diverse tastes of India, with a menu that celebrates the country's culinary heritage.",
+  },
+  {
+    image: indian,
     title: "Vice President - The Renouveau Project",
     description:
       "Indulge in the rich and diverse tastes of India, with a menu that celebrates the country's culinary heritage.",
