@@ -28,7 +28,7 @@ const itemVariants = {
 const Leadership = () => {
   return (
     <section id="leadership">
-      <h2 className="my-8 text-center text-3xl tracking-tighter lg:text-4xl">
+      <h2 className="my-8 text-center text-3xl tracking-tighter lg:text-5xl font-medium">
         My Leadership
       </h2>
       <motion.div

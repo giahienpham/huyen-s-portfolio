@@ -92,7 +92,7 @@ const Mission = () => {
     <section className="w-full h-screen flex flex-col" id="Mission">
       {/* Title */}
       <div className="flex-none py-8">
-        <h2 className="text-center text-3xl lg:text-4xl">
+        <h2 className="text-center text-3xl lg:text-5xl font-medium">
           My Mission in Education
         </h2>
       </div>

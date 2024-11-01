@@ -45,7 +45,7 @@ const Debate = () => {
   return (
     <section id="debate" className="py-16 container mx-auto">
       <div className="container mx-auto text-center">
-        <h2 className="mb-8 text-3xl lg:text-4xl">My Passion for Debate</h2>
+        <h2 className="mb-8 text-3xl lg:text-5xl font-medium">My Passion for Debate</h2>
         <div className="relative flex items-center justify-center">
           <motion.video
             ref={videoRef}

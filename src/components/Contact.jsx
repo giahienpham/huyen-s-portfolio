@@ -4,7 +4,7 @@ import { CONTACT } from "../constants";
 const Contact = () => {
   return (
     <section className="container mx-auto py-16" id="contact">
-      <h2 className="mb-8 text-center text-3xl lg:text-4xl">Contact Me</h2>
+      <h2 className="mb-8 text-center text-3xl lg:text-5xl font-medium">Contact Me</h2>
       <div className="text-neutral-400">
         {CONTACT.map((detail) => (
           <p

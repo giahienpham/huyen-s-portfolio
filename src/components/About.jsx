@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 const About = () => {
   return (
     <section className="container mx-auto mb-8 bg-[#FFFFF0]" id="about">
-      <h2 className="text-black py-16 text-center text-3xl tracking-tighter lg:text-4xl">
+      <h2 className="text-black py-16 text-center text-3xl tracking-tighter lg:text-5xl font-medium">
         About me
       </h2>
       <div className="flex flex-wrap">

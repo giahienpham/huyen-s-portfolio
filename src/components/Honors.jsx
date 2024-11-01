@@ -92,7 +92,7 @@ const Honors = () => {
   return (
     <section id="honors" className="py-16 bg-[#FFFFF0] relative">
       <div className="container mx-auto px-4 text-center">
-        <h2 className="my-16 text-3xl lg:text-4xl text-black">
+        <h2 className="my-16 text-3xl lg:text-5xl font-medium text-black">
           Honors & Experience
         </h2>
         <div className="relative">
