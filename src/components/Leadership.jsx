@@ -1,3 +1,5 @@
+// Leadership.js
+
 import React from "react";
 import { CUSINES } from "../constants";
 import { motion } from "framer-motion";
@@ -7,7 +9,7 @@ const containerVariants = {
   show: {
     opacity: 1,
     transition: {
-      staggerChildren: 1,
+      staggerChildren: 0.5,
     },
   },
 };
@@ -37,58 +39,114 @@ const Leadership = () => {
       >
         {CUSINES.map((cusine, index) => {
           // Determine if the current item is even (0-based indexing)
-          const isEven = index % 2 !== 0; // 1,3,... are even in 1-based counting
+          const isEven = index % 2 !== 0;
 
           return (
             <motion.div
               variants={itemVariants}
               key={index}
-              className="flex items-center border-b-4 border-dotted border-neutral-700/40 py-2"
+              className="flex flex-col md:flex-row items-start border-b-4 border-dotted border-neutral-700/40 py-4"
             >
-              {/* Number */}
-              {/* <div className="flex-shrink-0 pr-8 text-2xl">{cusine.number}</div> */}
-
-              {/* Conditional Rendering of Image and Text */}
               {isEven ? (
-                // For Even Items: Text first, then Image
                 <>
                   {/* Text Section */}
-                  <div className="pl-8 flex-1">
+                  <div className="md:pl-8 flex-1">
                     <h3 className="text-2xl uppercase tracking-tighter text-rose-300">
                       {cusine.title}
                     </h3>
-                    <p className="mt-4 text-lg tracking-tighter">
-                      {cusine.description}
-                    </p>
+                    {/* Render subtitle if it exists */}
+                    {cusine.subtitle && (
+                      <h4 className="text-xl italic mt-2">{cusine.subtitle}</h4>
+                    )}
+                    {/* Render bullet points */}
+                    {cusine.bulletPoints && (
+                      <ul className="mt-4 text-xl list-disc list-inside space-y-2">
+                        {cusine.bulletPoints.map((point, idx) => (
+                          <li key={idx}>{point}</li>
+                        ))}
+                      </ul>
+                    )}
                   </div>
                   {/* Image Section */}
-                  <div className="w-1/3 flex-shrink-0 pl-8">
-                    <img
-                      src={cusine.image}
-                      alt={cusine.title}
-                      className="h-auto rounded-3xl"
-                    />
+                  <div className="w-full md:w-1/3 flex-shrink-0 md:pl-8 mt-4 md:mt-0">
+                    {cusine.images && cusine.images.length > 1 ? (
+                      // Render Masonry Image Grid
+                      <div className="grid grid-cols-2 gap-2">
+                        {cusine.images.map((imgSrc, idx) => (
+                          <img
+                            key={idx}
+                            src={imgSrc}
+                            alt={`${cusine.title} Image ${idx + 1}`}
+                            className="w-full h-auto object-cover rounded-lg"
+                          />
+                        ))}
+                      </div>
+                    ) : cusine.images && cusine.images.length === 1 ? (
+                      // Render Single Image from images array
+                      <img
+                        src={cusine.images[0]}
+                        alt={cusine.title}
+                        className="w-full h-auto rounded-3xl"
+                      />
+                    ) : (
+                      // Render Single Image
+                      <img
+                        src={cusine.image}
+                        alt={cusine.title}
+                        className="w-full h-auto rounded-3xl"
+                      />
+                    )}
                   </div>
                 </>
               ) : (
-                // For Odd Items: Image first, then Text
                 <>
                   {/* Image Section */}
-                  <div className="w-1/3 flex-shrink-0 pr-8">
-                    <img
-                      src={cusine.image}
-                      alt={cusine.title}
-                      className="h-auto rounded-3xl"
-                    />
+                  <div className="w-full md:w-1/3 flex-shrink-0 md:pr-8 mb-4 md:mb-0">
+                    {cusine.images && cusine.images.length > 1 ? (
+                      // Render Masonry Image Grid
+                      <div className="grid grid-cols-2 gap-2">
+                        {cusine.images.map((imgSrc, idx) => (
+                          <img
+                            key={idx}
+                            src={imgSrc}
+                            alt={`${cusine.title} Image ${idx + 1}`}
+                            className="w-full h-auto object-cover rounded-lg"
+                          />
+                        ))}
+                      </div>
+                    ) : cusine.images && cusine.images.length === 1 ? (
+                      // Render Single Image from images array
+                      <img
+                        src={cusine.images[0]}
+                        alt={cusine.title}
+                        className="w-full h-auto rounded-3xl"
+                      />
+                    ) : (
+                      // Render Single Image
+                      <img
+                        src={cusine.image}
+                        alt={cusine.title}
+                        className="w-full h-auto rounded-3xl"
+                      />
+                    )}
                   </div>
                   {/* Text Section */}
-                  <div className="pl-8 flex-1">
+                  <div className="md:pl-8 flex-1">
                     <h3 className="text-2xl uppercase tracking-tighter text-rose-300">
                       {cusine.title}
                     </h3>
-                    <p className="mt-4 text-lg tracking-tighter">
-                      {cusine.description}
-                    </p>
+                    {/* Render subtitle if it exists */}
+                    {cusine.subtitle && (
+                      <h4 className="text-xl italic mt-2">{cusine.subtitle}</h4>
+                    )}
+                    {/* Render bullet points */}
+                    {cusine.bulletPoints && (
+                      <ul className="mt-4 text-xl list-disc list-inside space-y-2">
+                        {cusine.bulletPoints.map((point, idx) => (
+                          <li key={idx}>{point}</li>
+                        ))}
+                      </ul>
+                    )}
                   </div>
                 </>
               )}

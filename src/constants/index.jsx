@@ -7,6 +7,22 @@ import dish6 from "../assets/dish6.jpg";
 import dish7 from "../assets/dish7.jpg";
 import dish8 from "../assets/dish8.jpg";
 
+import cup_happy from "../assets/cup_happy.jpg";
+
+import incre3 from "../assets/incre3.jpg";
+import incre4 from "../assets/incre4.jpg";
+import incre5 from "../assets/incre5.jpg";
+import incre6 from "../assets/incre6.jpg";
+
+import buom1 from "../assets/buom1.jpg";
+
+import re1 from "../assets/re1.jpg";
+import re2 from "../assets/re2.jpg";
+
+import cds1 from "../assets/cds1.jpg";
+import cds2 from "../assets/cds2.jpg";
+import cds3 from "../assets/cds3.jpg";
+
 import italian from "../assets/italian.jpeg";
 import japanese from "../assets/japanese.jpeg";
 import indian from "../assets/indian.jpeg";
@@ -84,47 +100,63 @@ export const MISSION =
 
 export const CUSINES = [
   {
-    image: italian,
-    title: "Professional Advisor - CSP Debate Society",
-    description:
-      "Experience the flavors of Italy with our exquisite Italian cuisine, featuring traditional recipes and contemporary dishes.",
+    image: italian, // Replace with actual image path or URL
+    title: "Professional Advisor • CDS - CSP Debate Society",
+    subtitle:
+      "Largest Debate Club of Hanoi National University of Education - High School for Gifted Students",
+    bulletPoints: [
+      "Designed comprehensive debate training modules to onboard new members, covering debate structure, research methodologies, and argument development",
+      "Partnered with Chief Adjudication Panels to establish competition regulations and spearheaded the SKOUT DEBATE CHAMPIONSHIP 2023, engaging 250 primary and secondary school students in Hanoi",
+      "Led a team of 70 organizing staff in planning and executing the Warm-up Debating Championship, attracting 230 contestants nationwide and securing features in five major electronic newspapers in Vietnam",
+    ],
+    images: [cds1, cds2, cds3],
   },
   {
-    image: japanese,
-    title: "President - The Incredibles Project",
-    description:
-      "Delight in the art of Japanese culinary excellence, offering a fusion of classic and modern flavors.",
+    image: japanese, // Replace with actual image path or URL
+    title: "The Incredibles Project",
+    subtitle:
+      "Pioneering project teaching English to primary school students utilizing Visual Learning techniques",
+    bulletPoints: [
+      "Spearheaded The Incredibles Project, pioneering visual learning techniques to teach English to over 200 ethnic minority primary school students nationwide",
+      "Developed and executed comprehensive lesson plans and an 8-session online course, “Super Scholars,” engaging 160 primary school students across the country",
+      "Trained and mentored instructors in communicative and visual teaching methodologies, enhancing classroom management and instructional quality",
+      "Secured and allocated 50 million VND to equip Chieng Cang Primary School with new learning materials, benefiting teachers and more than 200 students in Son La province",
+    ],
+    images: [incre3, incre4, incre5, incre6],
+  },
+  {
+    image: indian, // Replace with actual image path or URL
+    title: "Founder & President • Cup of Happy Tea",
+    subtitle:
+      "Project teaches the elderly in my neighborhood to use technology for entertainment, learning, and connecting with relatives and friends",
+    bulletPoints: [
+      "Coordinated with the elderly health care center, guiding local residents to use social networks to read news and connect with relatives",
+      "Organized instructional sessions on how to use smartphones and register for online courses (cooking, health care, gardening, etc.)",
+    ],
+    images: [cup_happy],
+  },
+  {
+    image: indian, // Replace with actual image path or URL
+    title: "Vice President • The Renouveau Project season 2",
+    subtitle:
+      "Social volunteer club to support the reconstruction of community works to support the homeless elderly people",
+    bulletPoints: [
+      "Led a fundraising bake sale earning 20 million VND",
+      "Donated profits to Hanoi Chung Tay organization, and worked with them to renovate the garden space and living room for social housing",
+    ],
+    images: [re1, re2],
   },
   {
     image: indian,
-    title: "Founder & President - Cup of happy tea",
-    description:
-      "Indulge in the rich and diverse tastes of India, with a menu that celebrates the country's culinary heritage.",
-  },
-  {
-    image: indian,
-    title: "Vice President - The Renouveau Project",
-    description:
-      "Indulge in the rich and diverse tastes of India, with a menu that celebrates the country's culinary heritage.",
-  },
-  {
-    image: indian,
-    title: "My Website for Debate",
-    description: (
-      <>
-        I created a website on my own to share my knowledge and thoughts about
-        debate. Check out it here:{" "}
-        <a
-          href="http://14.225.204.21:8090"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-blue-500 underline hover:text-blue-700"
-        >
-          SkyDebate.com
-        </a>
-        .
-      </>
-    ),
+    title: "Head of Academics • Buom",
+    subtitle:
+      "Non-profit teaching project for high school seniors using visual learning methods to prepare knowledge for high school entrance exams",
+    bulletPoints: [
+      "Managed and ensured the quality of 50 lesson plans for math, literature, and English for the entire program",
+      "Converted lecture content into visual lesson plans to make for easier understanding of vocabulary and grammar concepts.",
+      "100% of students qualified for top-ranked public schools with English entrance exam scores of 9 or higher out of 10",
+    ],
+    images: [buom1],
   },
 ];
 

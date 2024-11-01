@@ -16,20 +16,16 @@ import data_asean1 from "../assets/data-asean1.jpg";
 import data_asean2 from "../assets/data-asean2.jpg";
 import data_asean3 from "../assets/stroke1.jpg";
 
+import elder1 from "../assets/elder1.jpg";
+import elder2 from "../assets/elder2.jpg";
+
 import honors1 from "../assets/honors1.jpg";
 import honors2 from "../assets/honors2.jpg";
 import honors3 from "../assets/honors3.jpg";
 import dish2 from "../assets/dish2.jpeg";
-import dish3 from "../assets/dish3.jpeg";
-import dish5 from "../assets/dish5.jpeg";
-import dish6 from "../assets/dish6.jpeg";
 import dish7 from "../assets/dish7.jpeg";
 
 import cert from "../assets/cert.jpg";
-import cert1 from "../assets/cert1.jpg";
-import cert2 from "../assets/cert2.jpg";
-import cert3 from "../assets/cert3.jpg";
-import cert4 from "../assets/cert4.jpg";
 import utalk from "../assets/utalk.jpg";
 import intern from "../assets/intern.jpg";
 import intern2 from "../assets/intern2.jpg";
@@ -48,6 +44,7 @@ const Honors = () => {
       image: dish2,
       title: "Researcher",
       description: "Multilingual support system for elderly people",
+      images: [elder1, elder2],
     },
     {
       id: 3,
@@ -273,7 +270,7 @@ const EnlargedSlide = ({
           {slide.images && slide.images.length > 1 ? (
             slide.images.length === 2 ? (
               // Custom layout for slides with exactly two images
-              <div className="flex flex-col h-full">
+              <div className="flex flex-col h-full gap-2">
                 {/* Top Image */}
                 <div className="w-full h-1/2">
                   <img
@@ -285,7 +282,7 @@ const EnlargedSlide = ({
                   />
                 </div>
                 {/* Bottom Image */}
-                <div className="w-full h-1/2">
+                <div className="w-full h-1/2 gap-2">
                   <img
                     src={slide.images[1]}
                     alt={`${slide.title} 2`}
