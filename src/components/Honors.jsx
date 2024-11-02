@@ -35,9 +35,22 @@ const Honors = () => {
     {
       id: 1,
       image: honors1,
-      title: "Teaching Assistant",
-      description: "Hanoi Debate Summer Camp 2024",
+      title: "Debate Teaching Assistant & Personal Coach",
+      subtitle: "Hanoi Debate Summer Camp 2024",
+      description: "English Connection Center",
       images: [honors1, honors2, honors3],
+      bulletPoints: [
+        "Organized and managed Debate and World Scholars’ Cup camp activities, including setting up debate venues, distributing materials, mentoring students, and ensuring seamless daily operations.",
+        "Monitored student engagement and progress throughout the camp, providing actionable feedback to instructors and parents.",
+        {
+          text: "2023 Internship Evaluation",
+          href: "https://drive.google.com/file/d/1X3W96bKBEWKylMSywCBEanzvL3kY-skS/view?usp=drive_link",
+        },
+        {
+          text: "2024 Internship Evaluation",
+          href: "https://drive.google.com/file/d/1X3W96bKBEWKylMSywCBEanzvL3kY-skS/view?usp=drive_link",
+        },
+      ],
     },
     {
       id: 2,
@@ -245,7 +258,7 @@ const EnlargedSlide = ({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-[#FFFFF0]" // Added bg-black here
+      className="fixed inset-0 z-50 flex items-center justify-center bg-[#FFFFF0]"
       onClick={onClose}
     >
       <div
@@ -359,7 +372,18 @@ const EnlargedSlide = ({
                 <ul className="list-disc list-inside space-y-2">
                   {slide.bulletPoints.map((point, index) => (
                     <li key={index} className="text-xl text-justify">
-                      {point}
+                      {typeof point === "string" ? (
+                        point
+                      ) : (
+                        <a
+                          href={point.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-blue-500 underline"
+                        >
+                          {point.text}
+                        </a>
+                      )}
                     </li>
                   ))}
                 </ul>

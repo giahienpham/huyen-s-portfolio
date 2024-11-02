@@ -96,7 +96,7 @@ export const ABOUT = {
 };
 
 export const MISSION =
-  "At our restaurant, our mission is to create delicious and memorable dining experiences.";
+  "Through debate, I cultivate critical thinking, build confidence, and refine persuasive communication skills. ";
 
 export const CUSINES = [
   {
