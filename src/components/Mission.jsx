@@ -26,9 +26,10 @@ const Mission = () => {
     {
       id: 3,
       image: mission4,
-      title: "Innovative Ideas",
+      title: "Volunteer English Tutor for Autism",
+      year: "2023",
       description:
-        "Description for the third slide. You can customize the content.",
+        "In 2023, I met a young girl who was the daughter of my mother's friend. She was one year younger than me and was navigating the challenges of autism, which made learning and communication particularly difficult for her. At that time, she was preparing for the highly selective Vietnam High School Entrance Exam in Hanoi, and her mother reached out to me for assistance with her English studies.\n\nCommitted to making a difference, I offered free, personalized tutoring tailored to her unique needs. I developed customized lesson plans and conducted regular study sessions aimed at addressing her specific challenges in learning and communication. Through our dedicated collaboration, her English skills improved significantly, which not only boosted her confidence but also played a crucial role in her successful admission to a prestigious public school.",
     },
     {
       id: 4,
@@ -126,10 +127,10 @@ const Mission = () => {
               >
                 {/* Content (1/3 width) */}
                 <div className="w-1/3 h-full flex flex-col justify-start items-start px-8 md:px-20 py-4">
-                  <h3 className="text-2xl md:text-5xl font-extrabold">
+                  <h3 className="text-2xl md:text-5xl font-bold">
                     {slide.title}
                   </h3>
-                  <p className="mt-4 max-w-lg text-sm md:text-base">
+                  <p className="mt-4 max-w-lg text-sm md:text-lg whitespace-pre-line">
                     {slide.description}
                   </p>
                 </div>

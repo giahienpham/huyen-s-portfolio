@@ -25,6 +25,8 @@ import honors3 from "../assets/honors3.jpg";
 import dish2 from "../assets/dish2.jpeg";
 import dish7 from "../assets/dish7.jpeg";
 
+import afs from "../assets/afs.jpg";
+
 import cert from "../assets/cert.jpg";
 import utalk from "../assets/utalk.jpg";
 import intern from "../assets/intern.jpg";
@@ -88,7 +90,7 @@ const Honors = () => {
     },
     {
       id: 6,
-      image: dish7,
+      image: afs,
       title: "Scholarship Winner",
       description: "AFS Intercultural Programs (France)",
     },
