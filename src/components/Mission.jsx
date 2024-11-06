@@ -1,27 +1,28 @@
 import React, { useState, useEffect, useRef } from "react";
+import ReactMarkdown from "react-markdown"; // Import react-markdown
 import missionImg from "../assets/mission.jpeg";
 import mission4 from "../assets/mission4.jpg";
 import TA from "../assets/TA.jpg";
-import incre1 from "../assets/incre1.jpg";
 import incre2 from "../assets/incre2.jpg";
 import buom from "../assets/buom.jpg";
 import plant1 from "../assets/plant1.jpg";
+import family from "../assets/family.jpg";
 
 const Mission = () => {
   const slides = [
     {
       id: 1,
-      image: incre1,
+      image: family,
       title: "Where it all began",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic voluptatem perspiciatis dicta possimus voluptates exercitationem esse quo dolorem, itaque, pariatur ducimus omnis facere reprehenderit ex distinctio reiciendis? Inventore, distinctio eius!",
+        "From a young age, my passion for teaching was kindled by simple yet meaningful interactions with my grandmother. After school, instead of rushing home, I would bring her to sit in front of the wooden wardrobe in the middle of our room. Armed with chalk stolen from my classroom, I would enthusiastically teach her how to construct sentences, distinguish between different parts of speech, and even tackle basic addition and subtraction. Sometimes, I would set up a makeshift study area, complete with a chair for her, to guide her in signing her name. These moments were filled with laughter and joy, as I saw the spark of understanding light up in her eyes.\n\n It was through these cherished memories that I discovered my love for teaching—a passion that continues to drive me to inspire and educate others today.",
     },
     {
       id: 2,
       image: TA,
-      title: "Creative Work",
+      title: "Debate Teaching Assistant",
       description:
-        "Another description for the second slide. Add as many slides as you like.",
+        "As a Debate Assistant in 2023, I organized and coordinated Debate and World Scholars’ Cup camp activities, including setting up debate spaces, distributing materials, and managing daily operations. I provided guidance on debate techniques, research strategies, and topic understanding to 300 students, while monitoring their participation and progress by offering feedback to instructors and parents.\n\n**Some notable results:**\n- **Team 247 (Hà My, Khánh Linh, Linh Chi):**\n  - 1st Overall Junior\n  - Trophy Top 1 Team Challenge\n  - Trophy Top 2 Team Debate\n  - Top 4 Team Bowl\n  - Top 10 Team Writing\n- **Team 240 (Hồng Phúc, Thái Lâm, Chí Thành):**\n  - Trophy Top 2 Team Challenge\n  - Trophy Top 2 Team Bowl\n  - Trophy Top 3 Team Debate\n  - Top 5 Team Writing",
     },
     {
       id: 3,
@@ -34,22 +35,24 @@ const Mission = () => {
     {
       id: 4,
       image: incre2,
-      title: "Future Vision",
-      description: "Exploring the vastness of space and our place within it.",
+      title: "The Incredibles Project",
+      description:
+        'The Incredibles Project is an innovative initiative dedicated to teaching English to primary school students through communicative and visual learning methods. I developed the project’s concept, curriculum, and overall strategy, while recruiting and managing a team of 60 staff members. Additionally, I trained 10 professionals in effective classroom techniques and led an 8-session online course, "Super Scholars," which reached 160 students nationwide. The project also included the "Isle of Treasure" workshop, combining survival skills with English communication for 100 participants. We donated 50 million VND to equip Chieng Cang Primary School in Son La province, benefiting teachers and 220 ethnic minority students. Furthermore, I created and taught eight lessons on “Careers” for the “Works Wonder” online event, attracting 53 students, and organized a workshop exploring four career fields—doctor, sports, science, and theater-cinema—for 60 primary students.',
       images: [incre2],
     },
     {
       id: 5,
       image: buom,
-      title: "Sustainable Growth",
+      title: "Buom Project",
       description:
-        "Strategies for sustainable growth and environmental preservation.",
+        "Buom Project is a non-profit initiative that prepares high school seniors for entrance exams using visual learning methods. I managed 50 lesson plans in math, literature, and English and conducted bi-weekly English sessions for 250 students. This approach resulted in 100% of participants gaining admission to top public schools with English scores of 9 or higher.",
     },
     {
       id: 6,
       image: plant1,
-      title: "Global Impact",
-      description: "Making a positive impact on communities worldwide.",
+      title: "The Renouveau Project - Season 2",
+      description:
+        "The Renouveau Project (Season 2) is a social volunteer initiative aimed at reconstructing community facilities to support homeless elderly individuals.\n\n Here, as a Vice President, I organized a successful fundraising bake sale that generated 20 million VND. We donated the proceeds to Hanoi Chung Tay and collaborated with them to renovate garden areas and living rooms in social housing, positively impacting over 50 residents.",
     },
   ];
 
@@ -92,7 +95,7 @@ const Mission = () => {
   return (
     <section className="w-full h-screen flex flex-col" id="Mission">
       {/* Title */}
-      <div className="flex-none py-8">
+      <div className="flex-none py-16">
         <h2 className="text-center text-3xl lg:text-5xl font-medium">
           My Mission in Education
         </h2>
@@ -126,13 +129,14 @@ const Mission = () => {
                 }`}
               >
                 {/* Content (1/3 width) */}
-                <div className="w-1/3 h-full flex flex-col justify-start items-start px-8 md:px-20 py-4">
+                <div className="w-1/3 h-full flex flex-col justify-start items-start px-8 md:px-20 py-4 overflow-y-auto">
                   <h3 className="text-2xl md:text-5xl font-bold">
                     {slide.title}
                   </h3>
-                  <p className="mt-4 max-w-lg text-sm md:text-lg whitespace-pre-line">
-                    {slide.description}
-                  </p>
+                  <ReactMarkdown
+                    className="mt-4 max-w-lg text-sm md:text-xl"
+                    children={slide.description}
+                  />
                 </div>
                 {/* Image (2/3 width) */}
                 <div className="w-2/3 h-full">

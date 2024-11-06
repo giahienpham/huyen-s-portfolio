@@ -105,9 +105,13 @@ const Honors = () => {
   const [selectedSlideIndex, setSelectedSlideIndex] = useState(0);
 
   return (
-    <section id="honors" className="py-16 bg-[#FFFFF0] relative">
+    <section
+      id="honors"
+      className="py-16 relative"
+      style={{ backgroundColor: "#b5977f" }}
+    >
       <div className="container mx-auto px-4 text-center">
-        <h2 className="my-16 text-3xl lg:text-5xl font-medium text-black">
+        <h2 className="mb-16 mt-6 text-3xl lg:text-5xl font-medium text-black">
           Honors & Experience
         </h2>
         <div className="relative">

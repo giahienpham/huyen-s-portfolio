@@ -28,7 +28,7 @@ const itemVariants = {
 const Leadership = () => {
   return (
     <section id="leadership">
-      <h2 className="my-8 text-center text-3xl tracking-tighter lg:text-5xl font-medium">
+      <h2 className="my-16 text-center text-3xl tracking-tighter lg:text-5xl font-medium">
         My Leadership
       </h2>
       <motion.div
@@ -50,8 +50,8 @@ const Leadership = () => {
               {isEven ? (
                 <>
                   {/* Text Section */}
-                  <div className="md:pl-8 flex-1">
-                    <h3 className="text-2xl uppercase tracking-tighter text-rose-300">
+                  <div className="md:pl-8 flex-1 pb-4">
+                    <h3 className="text-2xl uppercase tracking-tighter text-rose-300 pt-4">
                       {cusine.title}
                     </h3>
                     {/* Render subtitle if it exists */}
@@ -68,7 +68,7 @@ const Leadership = () => {
                     )}
                   </div>
                   {/* Image Section */}
-                  <div className="w-full md:w-1/3 flex-shrink-0 md:pl-8 mt-4 md:mt-0">
+                  <div className="w-full md:w-1/3 flex-shrink-0 md:pl-8 mt-4 md:mt-0 pt-4 pb-4">
                     {cusine.images && cusine.images.length > 1 ? (
                       // Render Masonry Image Grid
                       <div className="grid grid-cols-2 gap-2">
@@ -101,7 +101,7 @@ const Leadership = () => {
               ) : (
                 <>
                   {/* Image Section */}
-                  <div className="w-full md:w-1/3 flex-shrink-0 md:pr-8 mb-4 md:mb-0">
+                  <div className="w-full md:w-1/3 flex-shrink-0 md:pr-8 mb-4 md:mb-0 pt-4 pb-4">
                     {cusine.images && cusine.images.length > 1 ? (
                       // Render Masonry Image Grid
                       <div className="grid grid-cols-2 gap-2">
@@ -131,8 +131,8 @@ const Leadership = () => {
                     )}
                   </div>
                   {/* Text Section */}
-                  <div className="md:pl-8 flex-1">
-                    <h3 className="text-2xl uppercase tracking-tighter text-rose-300">
+                  <div className="md:pl-8 flex-1 pb-4">
+                    <h3 className="text-2xl uppercase tracking-tighter text-rose-300 pt-4">
                       {cusine.title}
                     </h3>
                     {/* Render subtitle if it exists */}

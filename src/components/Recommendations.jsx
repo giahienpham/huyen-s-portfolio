@@ -1,6 +1,6 @@
 import React from "react";
 import { REVIEW } from "../constants";
-import xaviour from "../assets/xaviour.jpeg";
+import mayor from "../assets/mayor.jpg";
 import customer1 from "../assets/customer1.jpeg";
 import customer2 from "../assets/customer2.jpeg";
 import customer3 from "../assets/customer3.jpeg";
@@ -40,7 +40,7 @@ const Recommendations = () => {
       >
         <motion.p
           variants={itemVariants}
-          className="mb-10 text-3xl font-light leading-normal tracking-tighter lg:mx-40 lg:mt-40 lg:text-[3.5rem]"
+          className="mb-10 text-2xl font-light leading-normal tracking-tighter lg:mx-40 lg:mt-40 lg:text-[2.5rem]"
         >
           {REVIEW.content}
         </motion.p>
@@ -49,15 +49,15 @@ const Recommendations = () => {
           className="flex items-center justify-center gap-6"
         >
           <img
-            src={xaviour}
+            src={mayor}
             width={80}
             height={80}
             alt={REVIEW.name}
             className="rounded-full border"
           />
           <div className="tracking-tighter">
-            <h6>{REVIEW.name}</h6>
-            <p className="text-sm text-neutral-500">{REVIEW.profession}</p>
+            <h3>{REVIEW.name}</h3>
+            <p className="text-base text-neutral-500">{REVIEW.profession}</p>
           </div>
         </motion.div>
       </motion.div>

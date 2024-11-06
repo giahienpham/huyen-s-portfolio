@@ -161,10 +161,10 @@ export const CUSINES = [
 ];
 
 export const REVIEW = {
-  name: "Xaviour Fernando",
-  profession: "Food Critic",
+  name: "Mr. Phung Van Duong",
+  profession: "Mayor of Trung Tu Village",
   content:
-    "“As a seasoned food critic, my expectations are always high when stepping into a new dining establishment. Restaura, with its unassuming exterior and elegantly designed interior, promised a unique culinary experience from the moment I walked in. And I must say, it delivered beyond my expectations.”",
+    "“Khanh Huyen is a rare, dynamic young person on our neighborhood committee. Most residents in our community are middle-aged or elderly. Yet, Huyen is always actively involved in local activities and is deeply dedicated to leading initiatives that help the elderly use technology. Even more impressive is her outstanding academic record—she was the only one in our village who got admitted to a specialized high school and frequently received awards for academic excellence. After working with Khanh Huyen, I am confident she is a well-rounded student!”",
 };
 
 export const CONTACT = [
