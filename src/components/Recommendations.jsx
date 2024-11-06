@@ -30,7 +30,7 @@ const itemVariants = {
 
 const Recommendations = () => {
   return (
-    <section className="container mx-auto mb-8 mt-12" id="recommendation">
+    <section className="container mx-auto mb-8" id="recommendation">
       <motion.div
         initial="hidden"
         whileInView="show"
