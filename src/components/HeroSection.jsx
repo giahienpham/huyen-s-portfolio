@@ -1,5 +1,6 @@
 import React from "react";
 import video from "../assets/hero.mp4";
+import bong from "../assets/bong.mp4";
 import logo from "../assets/logo1.png";
 import hero from "../assets/hero.jpeg";
 import { motion } from "framer-motion";
@@ -10,7 +11,7 @@ const HeroSection = () => {
     <section className="relative flex h-screen items-center justify-center">
       <div className="absolute inset-0 -z-20 h-full w-full overflow-hidden">
         <video
-          src={video}
+          src={bong}
           className="h-full w-full object-cover"
           muted
           autoPlay
